@@ -1,3 +1,5 @@
+const { colors, fonts } = require('./src/constants/token');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -6,7 +8,14 @@ module.exports = {
   ],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {},
+    extend: {
+    colors: colors,
+    fontFamily: {
+      "heading": [fonts.heading],
+      "body": [fonts.body],
+      'body-semibold': [fonts.bodySemiBold],
+    },
+  },
   },
   plugins: [],
 };
